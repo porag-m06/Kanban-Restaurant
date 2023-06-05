@@ -11,24 +11,27 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [Kanban Restaurant](#kanban-restaurant)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Kanban Restaurant](#-kanban-restaurant)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Usage](#usage)
+    - [To add dependencies and run linter tests](#to-add-dependencies-and-run-linter-tests)
+    - [Deployment](#deployment)
+  - [👥 Author ](#-author-)
+    - [Authors](#authors)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [❓ FAQ ](#-faq-)
+  - [📝 License ](#-license-)
 
 
 # 📖 Kanban Restaurant<a name="about-project"></a>
@@ -223,6 +226,10 @@ https://...
 - GitHub: [@porag-m06](https://github.com/porag-m06)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammad-porag-nsu-cse/)
+
+ GitHub: [ghermaico135](https://github.com/ghermaico135)
+- Twitter: [@Mikidarling3](https://twitter.com/@Mikidarling3)
+- LinkedIn: [Michael okbamichael](https://www.linkedin.com/in/michael-okbamichael-966106263/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
