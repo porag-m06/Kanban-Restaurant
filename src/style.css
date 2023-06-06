@@ -20,9 +20,13 @@ body {
   min-height: 100vh;
 }
 
+.max-w{
+  max-width: 1200px;
+  margin: auto;  
+}
 header{
   border: 4px solid red;
-  height: 10vh;
+  padding: 0 10px;
 }
 .navbar{
   border: 4px solid green;
@@ -33,7 +37,7 @@ header{
 }
 
 .logo{
-  width: 100px;
+  width: 60px;
   height: 60px;
 }
 
@@ -46,4 +50,11 @@ header{
 
 .nav-link{
   list-style-type: none;
+}
+
+.container {
+}
+
+footer h3 {
+  text-align: center;
 }
