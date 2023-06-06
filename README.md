@@ -231,6 +231,10 @@ https://...
 - Twitter: [@Mikidarling3](https://twitter.com/@Mikidarling3)
 - LinkedIn: [Michael okbamichael](https://www.linkedin.com/in/michael-okbamichael-966106263/)
 
+ GitHub: [maryam0007](https://github.com/maryam0007)
+- Twitter: [@maryam5905](https://twitter.com/maryam5905)
+- LinkedIn: [Maryam Bakhtawar](https://www.linkedin.com/in/maryam-bakhtawar-516603267/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
