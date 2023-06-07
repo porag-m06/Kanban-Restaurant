@@ -98,3 +98,133 @@ footer {
 footer h3 {
   text-align: center;
 }
+
+/* Reservation */
+.modal{
+  width: 1200px;
+  background: black;
+}
+.Reservation-modal{
+  position: fixed;
+  background: linear-gradient(rgba(193, 181, 181, 0.2), rgba(218, 204, 204, 0.4));
+  max-width: 80vw;
+  height:98vh;
+  margin: 1rem auto;
+  border: 4px solid blue;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  z-index: 8;
+  /* background-color: rgb(226, 213, 213); */
+  overflow-y: hidden;
+  display: block;
+  animation-name: modalOpen;
+  animation-duration: 5s;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes modalOpen{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+
+#closeBtn{
+  width:64;
+	height:64;
+  position: absolute;
+  z-index: 1;
+  right: 1.3rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  border: 4px solid red;
+}
+
+.meal-container-order{
+  max-width: 70%;
+  margin: 1rem auto;
+  border: 4px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+  border-radius: 3%;
+}
+
+.img-container{
+  border: 4px solid red;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  margin: 0.5rem auto;
+}
+
+.item-img{
+  width:80%;
+}
+
+.item-specification-container{
+  border: 4px solid blue;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  width: 80%;
+  padding: 1rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.item-specification{
+  list-style-type: none;
+}
+.item{
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+
+.order-list{
+  width: 100%;
+  border: 4px solid green;
+  margin: 0.5rem 0 0.5rem 0;
+  padding: 1rem;
+  list-style-type: none;
+}
+
+.order-form{
+  border:4px solid red;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+  padding: 0.5rem;
+  margin-bottom:0.5rem ;
+}
+
+
+.form-control{
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.form-control,input[type='text']{
+  padding: 0.5rem;
+}
+
+.form-control:focus{
+  outline: none;
+}
+
+.btnReserve{
+  padding: 0.5rem;
+  background-color: blue;
+  color: #fff;
+  border-radius: 0.4rem;
+  border: none;
+  font-size: 1.5rem;
+}
