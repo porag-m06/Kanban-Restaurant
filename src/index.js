@@ -1,7 +1,7 @@
 import "./style.css";
 import getAllSeaFoodMeals from "./meals.js";
 import logo from "../assets/logo-kan.png";
-import getItem from "./modules/reservation2";
+import getItem from "./modules/reservation";
 
 const logoImg = document.querySelector(".logo");
 logoImg.src = logo;
