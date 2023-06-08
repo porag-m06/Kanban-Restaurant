@@ -5,23 +5,20 @@ import { getReservation } from "./addReservation.js";
 const reservation = "l7B8OMnF05i23EvIkgyn"
 const displayMeals = async (mealArray) => {
 	let content = "";
-	
+
 	mealArray.forEach((meal) => {
 		content += `
 		<div class="modal"> 
-<div class="Reservation-modal">
+          <div class="Reservation-modal">
 				<div class="closeBtn">
-					<img
-						id="closeBtn"
-						src="https://img.icons8.com/glyph-neue/64/delete-sign.png"
-						alt="delete-sign" />
+					<img id="closeBtn" src="https://img.icons8.com/glyph-neue/64/delete-sign.png" alt="delete-sign" />
 				</div>
 				<div class="meal-container-order">
 						<div class="img-container">
 							<img src=${meal.strMealThumb} class="item-img" alt="food-image" />
 						</div>
 
-						<h1>Space 3</h1>
+						<h1>${meal.strMeal}</h1>
 
 						<div class="item-specification-container">
 							<ul class="item-specification">
@@ -72,12 +69,12 @@ const displayMeals = async (mealArray) => {
 				</div>
 </div>
 </div>`;
-	// 	setTimeout(() => {
-	// 		const orderContainer = document.querySelector(".meal-container-order");
-	// 		orderContainer.innerHTML = `
-	
-	// `;
-	// 	}, 30000);
+		// 	setTimeout(() => {
+		// 		const orderContainer = document.querySelector(".meal-container-order");
+		// 		orderContainer.innerHTML = `
+
+		// `;
+		// 	}, 30000);
 	});
 
 	document.body.innerHTML = content;
