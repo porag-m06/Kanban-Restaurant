@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: 'Pacifico', 'Yanone Kaffeesatz', 'Acme', cursive, monospace, sans-serif, serif;
+  font-family:  cursive, monospace, sans-serif, serif;
   overflow-x: hidden;
   margin: 0;
   min-height: 100vh;
@@ -74,11 +74,14 @@ header {
 
 .card h1 {
   text-align: center;
+  font-size: 20px;
+  height: 56px;
 }
 
 .card img {
   width: 200px;
   border-radius: 15px;
+  margin: 5px;
 }
 
 .card button {
