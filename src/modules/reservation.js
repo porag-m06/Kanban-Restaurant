@@ -30,7 +30,7 @@ const displayMeals = (meal, reservetionInfoArray) => {
             </div>
 
             <div class="meal-container-order">
-                <h2 class="meal-reservation">Reservation History(...)</h2>
+                <h2 class="meal-reservation">Reservation History <span class="meal-reservation-span"></span></h2>
 
                 <div>
                     <ul class="order-list-${meal.idMeal}">
@@ -50,12 +50,13 @@ const displayMeals = (meal, reservetionInfoArray) => {
          </div>
         </div>`;
 
-  // document.body.innerHTML = content;
   document.querySelector('.reservation-popup').innerHTML = content;
+
+  //Adding reservation history count
+  document.querySelector('.meal-reservation-span').innerHTML = reservetionInfoArray.length;
 
   // Adding reservation history to the modal
   const reservationUl = document.querySelector(`.order-list-${meal.idMeal}`);
-//   console.log(reservationUl);
   if (reservetionInfoArray.length) {
     reservetionInfoArray.forEach((reservation) => {
       const li = document.createElement('li');
@@ -66,22 +67,10 @@ const displayMeals = (meal, reservetionInfoArray) => {
     console.log(reservationUl);
   }
 
-  // count function
-  const count = (reservetionInfoArray) => {
-    if (reservetionInfoArray.length) {
-      return reservetionInfoArray.length;
-    }
-    return 0;
-  };
-  const mealReservation = document.querySelector('.meal-reservation').innerHTML = count;
   // close Modal
-  const reservationModal = document.querySelector('.Reservation-modal');
-
-  // const closePopup = (e)=>{
-  //     if(e.target.classList.contains('closeBtn')){
-  //         reservationModal.style.display="none"
-  //     }
-  // }
+  document.querySelector('#closeBtn').addEventListener('click',()=>{
+    document.querySelector('.Reservation-modal').style.display ="none";
+  })
 
   // Adding reservation
   const reservationFrom = document.querySelector('.order-form');
@@ -92,8 +81,10 @@ const displayMeals = (meal, reservetionInfoArray) => {
     const endDate = document.querySelector('#end-date').value;
     console.log('#######', meal.idMeal, userName, startDate, endDate);
     addReservation(meal.idMeal, userName, startDate, endDate);
+    reservationFrom.reset();
   });
-};
+
+};//displayMeals
 
 const getItem = async (mealId) => {
   const response = await fetch(
@@ -101,12 +92,6 @@ const getItem = async (mealId) => {
   );
   const data = await response.json();
   console.log('\n\nDisplay Meal: ----->', data.meals);
-
-  // console.log("\n\nMeal: ----->\n", data.meals[0].strMeal);
-  // console.log("\n\nId: ----->\n", data.meals[0].idMeal);
-  // console.log("\n\nArea: ----->\n", data.meals[0].strArea);
-  // console.log("\n\nCategory: ----->\n", data.meals[0].strCategory);
-  // console.log("\n\nInstruction: ----->\n", data.meals[0].strInstructions);
   const reservetionInfoArray = await getReservation(data.meals[0].idMeal);
   displayMeals(data.meals[0], reservetionInfoArray);
 };

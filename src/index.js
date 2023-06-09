@@ -21,7 +21,7 @@ const showCards = (foodArray) => {
   const container = document.querySelector('.container');
   container.innerHTML = '';
 
-  for (let index = 1; index < foodArray.length; index += 1) {
+  for (let index = 0; index < foodArray.length; index += 1) {
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('flex', 'card');
     cardDiv.innerHTML = `<h1>${foodArray[index].strMeal}</h1>
@@ -43,6 +43,7 @@ setTimeout(() => {
     /* eslint-disable */
 		console.log("No data found while fetching for meal list!!!");
 		/* eslint-enable */
+    document.querySelector(".container").textContent = "Error getting data from server! Please reload."
   }
 }, 2000);
 
