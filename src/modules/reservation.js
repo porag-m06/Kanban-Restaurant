@@ -1,5 +1,17 @@
 import { getReservation, addReservation } from './involvment.js';
 
+const setReservationHistory = (reservetionInfoArray, reservationUl) => {
+  reservationUl.innerHTML='';
+  if (reservetionInfoArray.length) {
+    reservetionInfoArray.forEach((reservation) => {
+      const li = document.createElement('li');
+      li.classList.add('item');
+      li.innerHTML = `${reservation.date_start}  --  ${reservation.date_end}  By  ${reservation.username} `;
+      reservationUl.appendChild(li);
+    });
+  }
+}
+
 const displayMeals = (meal, reservetionInfoArray) => {
   let content = '';
   content = `<div class="modal" id="item-modal">
@@ -54,14 +66,7 @@ const displayMeals = (meal, reservetionInfoArray) => {
 
   // Adding reservation history to the modal
   const reservationUl = document.querySelector(`.order-list-${meal.idMeal}`);
-  if (reservetionInfoArray.length) {
-    reservetionInfoArray.forEach((reservation) => {
-      const li = document.createElement('li');
-      li.classList.add('item');
-      li.innerHTML = `${reservation.date_start}  --  ${reservation.date_end}  By  ${reservation.username} `;
-      reservationUl.appendChild(li);
-    });
-  }
+  setReservationHistory(reservetionInfoArray, reservationUl);
 
   // close Modal
   document.querySelector('#closeBtn').addEventListener('click', () => {
@@ -77,6 +82,29 @@ const displayMeals = (meal, reservetionInfoArray) => {
     const endDate = document.querySelector('#end-date').value;
     addReservation(meal.idMeal, userName, startDate, endDate);
     reservationFrom.reset();
+
+    let updatedReservetionInfoArray = [];
+
+    setTimeout(() => {
+      (async () => {
+        try {
+          updatedReservetionInfoArray = await getReservation(meal.idMeal);
+          console.log("===>", updatedReservetionInfoArray);
+        } catch (error) {
+          /* eslint-disable */
+          console.error(error.message);
+          /* eslint-enable */
+        }
+      })()
+
+      setTimeout(() => {
+      console.log("In the second timeout: ", updatedReservetionInfoArray);
+      document.querySelector('.meal-reservation-span').innerHTML = updatedReservetionInfoArray.length;
+      setReservationHistory(updatedReservetionInfoArray, reservationUl);
+      }, 1000);
+
+    }, 1000);
+
   });
 };// displayMeals
 
