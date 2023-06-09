@@ -139,12 +139,12 @@ footer h3 {
   width: 84px;
   height: 84px;
   position: absolute;
-  z-index: 1;
+  z-index: 99;
   right: 1.3rem;
   margin-top: 1rem;
   margin-left: 1.3rem;
-  border: 4px solid red;
-  color: red;
+  /* background-color: #fff; */
+  border-radius: 4%;
 }
 
 .meal-container-order {
