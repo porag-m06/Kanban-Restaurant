@@ -11,6 +11,7 @@ const logoImg = document.querySelector('.logo');
 logoImg.src = logo;
 
 let allSeafoods = [];
+
 (async () => {
   try {
     allSeafoods = await getAllSeaFoodMeals();

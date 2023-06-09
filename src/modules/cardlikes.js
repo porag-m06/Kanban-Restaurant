@@ -1,14 +1,12 @@
-const likeUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Kk29kSc7pTGrSuCbL9JI/likes';
-
 const getLikes = async (MealId) => {
-  const response = await fetch(likeUrl);
+  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Kk29kSc7pTGrSuCbL9JI/likes');
   const jsonDataLikesArray = await response.json();
   const targetcardObj = jsonDataLikesArray.find((element) => element.item_id === MealId);
   return targetcardObj.likes;
 };
 
 const populateCurrentLikes = async () => {
-  const response = await fetch(likeUrl);
+  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Kk29kSc7pTGrSuCbL9JI/likes');
   const jsonDataLikesArray = await response.json();
   jsonDataLikesArray.forEach((element) => {
     document.querySelector(`#s${element.item_id}`).innerText = element.likes;
@@ -16,7 +14,7 @@ const populateCurrentLikes = async () => {
 };
 
 const addLikes = async (mealId) => {
-  const response = await fetch(likeUrl,
+  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Kk29kSc7pTGrSuCbL9JI/likes',
     {
       method: 'POST',
       body: JSON.stringify({
