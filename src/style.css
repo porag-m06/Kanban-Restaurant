@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: 'Pacifico', 'Yanone Kaffeesatz', 'Acme', cursive, monospace, sans-serif, serif;
+  font-family: cursive, monospace, sans-serif, serif;
   overflow-x: hidden;
   margin: 0;
   min-height: 100vh;
@@ -74,11 +74,14 @@ header {
 
 .card h1 {
   text-align: center;
+  font-size: 20px;
+  height: 56px;
 }
 
 .card img {
   width: 200px;
   border-radius: 15px;
+  margin: 5px;
 }
 
 .card button {
@@ -97,4 +100,194 @@ footer {
 
 footer h3 {
   text-align: center;
+}
+
+/* Reservation */
+
+.Reservation-modal {
+  width: 80%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.4);
+  text-align: center;
+  padding: 30px;
+  display: block;
+
+  /* visibility: hidden; */
+  animation-name: modalOpen;
+  animation-duration: 2s;
+  transition: transform 0.4s, top 0.4s;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 3%;
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+#closeBtn {
+  width: 84px;
+  height: 84px;
+  position: absolute;
+  z-index: 99;
+  right: 1.3rem;
+  margin-top: 1rem;
+  margin-left: 1.3rem;
+
+  /* background-color: #fff; */
+  border-radius: 4%;
+}
+
+.meal-container-order {
+  width: 70%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3%;
+}
+
+.img-container {
+  min-width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem auto;
+}
+
+.item-img {
+  width: 100%;
+  border-radius: 5%;
+}
+
+.item-specification-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding: 1rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.item-specification {
+  list-style-type: none;
+  font-size: 32px;
+}
+
+.item {
+  margin-bottom: 0.5rem;
+  list-style-type: none;
+}
+
+.order-list {
+  width: 100%;
+  min-height: 40vh;
+  overflow-y: scroll;
+  margin: 0.5rem 0 0.5rem 0;
+  padding: 1rem;
+  list-style-type: none;
+}
+
+.order-form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 80%;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.form-control,
+input[type='text'] {
+  padding: 0.5rem;
+  font-size: 24px;
+}
+
+.form-control:focus {
+  outline: none;
+}
+
+.btnReserve {
+  padding: 1rem;
+  background-color: blue;
+  color: #fff;
+  border-radius: 0.6rem;
+  border: none;
+  font-size: 32px;
+  height: 80px;
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  .Reservation-modal {
+    width: 120%;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  #closeBtn {
+    width: 40px;
+    height: 44px;
+    margin-top: 1rem;
+    margin-left: 0.2rem;
+    gap: 4px;
+  }
+
+  .meal-container-order {
+    width: 85%;
+  }
+
+  .meal-title {
+    font-size: 18px;
+  }
+
+  .item-specification-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 0.7rem;
+  }
+
+  .item {
+    font-size: 16px;
+  }
+
+  .meal-reservation,
+  .add-reservation {
+    font-size: 16px;
+  }
+
+  .order-form {
+    width: 80%;
+  }
+
+  .form-control,
+  input[type='text'] {
+    padding: 0.3rem;
+    font-size: 18px;
+  }
+
+  .btnReserve {
+    padding: 0.3rem;
+    height: 50px;
+    width: 100px;
+    font-size: 22px;
+  }
 }
