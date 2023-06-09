@@ -17,6 +17,14 @@ let allSeafoods = [];
   }
 })();
 
+const setEventForReservation = (btnReserve, mealId) => {
+  btnReserve.addEventListener('click', (e) => {
+    if (e.target.classList.contains('reserve')) {
+      getItem(mealId);
+    }
+  });
+};
+
 const showCards = (foodArray) => {
   const container = document.querySelector('.container');
   container.innerHTML = '';
@@ -43,16 +51,6 @@ setTimeout(() => {
     /* eslint-disable */
 		console.log("No data found while fetching for meal list!!!");
 		/* eslint-enable */
-    document.querySelector(".container").textContent = "Error getting data from server! Please reload."
+    document.querySelector('.container').textContent = 'Error getting data from server! Please reload.';
   }
 }, 2000);
-
-const setEventForReservation = (btnReserve, mealId) => {
-  btnReserve.addEventListener('click', (e) => {
-    console.log('R Clicked');
-    if (e.target.classList.contains('reserve')) {
-      // modal.style.display = "block";
-      getItem(mealId);
-    }
-  });
-};

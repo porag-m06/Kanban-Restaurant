@@ -2,10 +2,8 @@ import { getReservation, addReservation } from './involvment.js';
 
 const displayMeals = (meal, reservetionInfoArray) => {
   let content = '';
-  content = `
-		<div class="modal" id="item-modal">
+  content = `<div class="modal" id="item-modal">
          <div class="Reservation-modal">
-
             <div class="closeBtn">
                 <img id="closeBtn" src="https://img.icons8.com/glyph-neue/64/delete-sign.png" alt="delete-sign" />
             </div>
@@ -34,7 +32,6 @@ const displayMeals = (meal, reservetionInfoArray) => {
 
                 <div>
                     <ul class="order-list-${meal.idMeal}">
-                    <li class="item">05/06/2023 - 09/06/2023 by miki</li>
                     </ul>
                 </div>
                 
@@ -52,8 +49,8 @@ const displayMeals = (meal, reservetionInfoArray) => {
 
   document.querySelector('.reservation-popup').innerHTML = content;
 
-  //Adding reservation history count
-  document.querySelector('.meal-reservation-span').innerHTML = reservetionInfoArray.length;
+  // Adding reservation history count
+  document.querySelector('.meal-reservation-span').innerHTML = reservetionInfoArray.length || 0;
 
   // Adding reservation history to the modal
   const reservationUl = document.querySelector(`.order-list-${meal.idMeal}`);
@@ -64,13 +61,12 @@ const displayMeals = (meal, reservetionInfoArray) => {
       li.innerHTML = `${reservation.date_start}  --  ${reservation.date_end}  By  ${reservation.username} `;
       reservationUl.appendChild(li);
     });
-    console.log(reservationUl);
   }
 
   // close Modal
-  document.querySelector('#closeBtn').addEventListener('click',()=>{
-    document.querySelector('.Reservation-modal').style.display ="none";
-  })
+  document.querySelector('#closeBtn').addEventListener('click', () => {
+    document.querySelector('.Reservation-modal').style.display = 'none';
+  });
 
   // Adding reservation
   const reservationFrom = document.querySelector('.order-form');
@@ -79,19 +75,16 @@ const displayMeals = (meal, reservetionInfoArray) => {
     const userName = document.querySelector('#userName').value;
     const startDate = document.querySelector('#start-date').value;
     const endDate = document.querySelector('#end-date').value;
-    console.log('#######', meal.idMeal, userName, startDate, endDate);
     addReservation(meal.idMeal, userName, startDate, endDate);
     reservationFrom.reset();
   });
-
-};//displayMeals
+};// displayMeals
 
 const getItem = async (mealId) => {
   const response = await fetch(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`,
   );
   const data = await response.json();
-  console.log('\n\nDisplay Meal: ----->', data.meals);
   const reservetionInfoArray = await getReservation(data.meals[0].idMeal);
   displayMeals(data.meals[0], reservetionInfoArray);
 };
