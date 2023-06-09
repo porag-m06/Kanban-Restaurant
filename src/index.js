@@ -1,5 +1,7 @@
 import './style.css';
-import getAllSeaFoodMeals from './meals.js';
+import getAllSeaFoodMeals from './modules/meals.js';
+import {addLikeOnEvent} from './modules/cardlikes.js'
+
 import logo from '../assets/logo-kan.png';
 import getItem from './modules/reservation.js';
 
@@ -35,12 +37,20 @@ const showCards = (foodArray) => {
     cardDiv.innerHTML = `<h1>${foodArray[index].strMeal}</h1>
                <h6>ID: ${foodArray[index].idMeal}</h6>
                <img src="${foodArray[index].strMealThumb}" alt="" >
+               <div class="likes flex">
+               <img class="like-img img${index}" src="" alt="">
+               <h4><span id = "s${index}">0</span> likes</h4>
+               </div>
                <button class="comment">Comments</button>
                <button class="reserve reserve${index}">Reservations</button>
                `;
     container.appendChild(cardDiv);
     const btnReserve = document.querySelector(`.reserve${index}`);
     setEventForReservation(btnReserve, foodArray[index].idMeal);
+
+    const likeImg = document.querySelector(`.img${index}`);
+    likeImg.src = like;
+    addLikeOnEvent(likeImg,foodArray[index].idMeal)
   }
 };
 
