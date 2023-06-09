@@ -3,6 +3,7 @@ import getAllSeaFoodMeals from './modules/meals.js';
 import {addLikeOnEvent} from './modules/cardlikes.js'
 
 import logo from '../assets/logo-kan.png';
+import like from '../assets/like2.png'
 import getItem from './modules/reservation.js';
 
 const logoImg = document.querySelector('.logo');

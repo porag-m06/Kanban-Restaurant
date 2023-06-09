@@ -84,6 +84,16 @@ header {
   margin: 5px;
 }
 
+.likes {
+  width: 60%;
+  padding: 10px 0;
+  justify-content: space-around;
+}
+
+.card .likes img{
+  width: 30px;
+}
+
 .card button {
   border: 1px solid #ffeb3b;
   border-radius: 5px;
