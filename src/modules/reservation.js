@@ -89,7 +89,6 @@ const displayMeals = (meal, reservetionInfoArray) => {
       (async () => {
         try {
           updatedReservetionInfoArray = await getReservation(meal.idMeal);
-          console.log('===>', updatedReservetionInfoArray);
         } catch (error) {
           /* eslint-disable */
           console.error(error.message);
@@ -98,7 +97,6 @@ const displayMeals = (meal, reservetionInfoArray) => {
       })();
 
       setTimeout(() => {
-        console.log('In the second timeout: ', updatedReservetionInfoArray);
         document.querySelector('.meal-reservation-span').innerHTML = updatedReservetionInfoArray.length;
         setReservationHistory(updatedReservetionInfoArray, reservationUl);
       }, 1000);

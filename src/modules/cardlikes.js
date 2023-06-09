@@ -1,44 +1,39 @@
-const getLikes = async ()=>{
-	const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/gu2Mtw1O5kzLsbGb8mGx/likes`);
-	const jsonData = await response.json();
-    console.log(jsonData);
-	//return jsonData;
-}
+const likeUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Kk29kSc7pTGrSuCbL9JI/likes';
 
-const addLikes = async (mealId) => {
-	console.log("ADDING Likes : ",mealId);
-	const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/gu2Mtw1O5kzLsbGb8mGx/likes`,
-		{
-			method: 'POST',
-			body: JSON.stringify({
-				"item_id": mealId
-			}),
-			headers: {
-				'Content-type': 'application/json; charset=UTF-8'
-			}
-		}
-	);
-    console.log(response);
-	console.log(response.status,response.statusText,"Like ADDED!");
-	return response.status;
+const getLikes = async (MealId) => {
+  const response = await fetch(likeUrl);
+  const jsonDataLikesArray = await response.json();
+  const targetcardObj = jsonDataLikesArray.find((element) => element.item_id === MealId);
+  return targetcardObj.likes;
 };
 
-const addLikeOnEvent = (likeImgAsBtn, MealId )=>{
-    likeImgAsBtn.addEventListener('click',()=>{
-        console.log("IMG: ", likeImgAsBtn,"with id: ",MealId," is clicked!!!");
-        (async()=>{
-            try {
-                addLikes(MealId);
-            } catch (error) {
-                
-            }
-        })()
-        
-    })
+const populateCurrentLikes = async () => {
+  const response = await fetch(likeUrl);
+  const jsonDataLikesArray = await response.json();
+  jsonDataLikesArray.forEach((element) => {
+    document.querySelector(`#s${element.item_id}`).innerText = element.likes;
+  });
+};
 
-}
+const addLikes = async (mealId) => {
+  const response = await fetch(likeUrl,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: mealId,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+  return response.status;
+};
 
-addLikes(52944);
-//getLikes()
-
-//export {getLikes,addLikes,addLikeOnEvent};
+const addLikeOnEvent = (likeImgAsBtn, MealId) => {
+  likeImgAsBtn.addEventListener('click', async () => {
+    await addLikes(MealId);
+    const numberOflikes = await getLikes(MealId);
+    document.querySelector(`#s${MealId}`).innerText = numberOflikes;
+  });
+};
+export { addLikeOnEvent, populateCurrentLikes };
