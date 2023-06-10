@@ -97,7 +97,7 @@ Built using **WEBPACK** following **GitFlow** it is  very simple yet powerful pr
 
 > Please follow the link for a live demo.
 
-- [Will be available soon...](https://github.com/porag-m06/Kanban-Restaurant)
+- [The Kanban Restaurant]([https://github.com/porag-m06/Kanban-Restaurant](https://porag-m06.github.io/Kanban-Restaurant/dist/))
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
