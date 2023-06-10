@@ -63,6 +63,7 @@ header {
   align-content: center;
   gap: 20px;
   padding: 20px 0;
+  overflow-y: hidden;
 }
 
 .card {
@@ -140,11 +141,14 @@ header {
 }
 
 footer {
-  height: 50px;
+  height: 55px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 footer h3 {
   text-align: center;
+  font-size: 22px;
 }
 
 /* Reservation */
