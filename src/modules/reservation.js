@@ -1,5 +1,6 @@
 import { getReservation, addReservation } from './involvment.js';
 
+export const reservationCounter = (array) => array.length || 0;
 const setReservationHistory = (reservetionInfoArray, reservationUl) => {
   reservationUl.innerHTML = '';
   if (reservetionInfoArray.length) {
@@ -97,7 +98,7 @@ const displayMeals = (meal, reservetionInfoArray) => {
       })();
 
       setTimeout(() => {
-        document.querySelector('.meal-reservation-span').innerHTML = updatedReservetionInfoArray.length;
+        document.querySelector('.meal-reservation-span').innerHTML = reservationCounter(updatedReservetionInfoArray);
         setReservationHistory(updatedReservetionInfoArray, reservationUl);
       }, 1000);
     }, 1000);
