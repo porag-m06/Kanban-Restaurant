@@ -88,13 +88,7 @@ const displayMeals = (meal, reservetionInfoArray) => {
 
     setTimeout(() => {
       (async () => {
-        try {
-          updatedReservetionInfoArray = await getReservation(meal.idMeal);
-        } catch (error) {
-          /* eslint-disable */
-          console.error(error.message);
-          /* eslint-enable */
-        }
+        updatedReservetionInfoArray = await getReservation(meal.idMeal);
       })();
 
       setTimeout(() => {
@@ -103,7 +97,7 @@ const displayMeals = (meal, reservetionInfoArray) => {
       }, 1000);
     }, 1000);
   });
-};// displayMeals
+};
 
 const getItem = async (mealId) => {
   const response = await fetch(

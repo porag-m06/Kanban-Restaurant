@@ -11,13 +11,7 @@ logoImg.src = logo;
 let allSeafoods = [];
 
 (async () => {
-  try {
-    allSeafoods = await getAllSeaFoodMeals();
-  } catch (error) {
-    /* eslint-disable */
-    console.error(error.message);
-    /* eslint-enable */
-  }
+  allSeafoods = await getAllSeaFoodMeals();
 })();
 
 const setEventForReservation = (btnReserve, mealId) => {
@@ -35,17 +29,20 @@ const showCards = (foodArray) => {
   for (let index = 0; index < foodArray.length; index += 1) {
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('flex', 'card');
-    cardDiv.innerHTML = `<h1>${foodArray[index].strMeal}</h1>
-               <h6>${foodArray[index].idMeal}</h6>
+    cardDiv.innerHTML = `<h6>${foodArray[index].idMeal}</h6>
                <img src="${foodArray[index].strMealThumb}" alt="food image" >
-               <div class="likes flex">
-                <img class="like-img img${index}" src="" alt="like image">
-                <h4><span id = "s${foodArray[index].idMeal}">0</span> likes</h4>
+               <div class="flex name-likes">
+                  <h1>${foodArray[index].strMeal}</h1>
+
+                  <div class="flex likes">
+                  <img class="like-img img${index}" src="" alt="like image">
+                  <h4><span id = "s${foodArray[index].idMeal}">0</span> likes</h4>
+                  </div>
+
                </div>
-               <div class="flex crd-btns">
+
                 <button class="comment">Comments</button>
-                <button class="reserve reserve${index}">Reservations</button>
-               </div>`;
+                <button class="reserve reserve${index}">Reservations</button>`;
     container.appendChild(cardDiv);
     const btnReserve = document.querySelector(`.reserve${index}`);
     setEventForReservation(btnReserve, foodArray[index].idMeal);
@@ -63,9 +60,6 @@ setTimeout(() => {
     showCards(allSeafoods);
     document.querySelector('#m-item').innerText = allSeafoods.length;
   } else {
-    /* eslint-disable */
-    console.log("No data found while fetching for meal list!!!");
-    /* eslint-enable */
     document.querySelector('.container').textContent = 'Error getting data from the server! Check your internet connection & reload Please...';
   }
 }, 2000);

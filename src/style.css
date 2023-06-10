@@ -67,7 +67,7 @@ header {
 
 .card {
   width: 350px;
-  height: 460px;
+  height: 480px;
   flex-direction: column;
   border: 1px solid gainsboro;
   border-radius: 15px;
@@ -83,9 +83,10 @@ header {
 }
 
 .card h1 {
-  text-align: center;
+  text-align: left;
   font-size: 20px;
-  height: 56px;
+  height: 50px;
+  width: 65%;
 }
 
 .card h6 {
@@ -93,15 +94,20 @@ header {
 }
 
 .card img {
-  width: 200px;
+  width: 250px;
   border-radius: 15px;
   margin: 5px;
 }
 
+.name-likes {
+  margin: 10px 0;
+  width: 80%;
+  justify-content: space-between;
+}
+
 .likes {
-  width: 60%;
-  padding: 10px 0;
-  justify-content: space-around;
+  flex-direction: column;
+  width: 20%;
 }
 
 .card .likes img {
@@ -111,10 +117,6 @@ header {
 
 .card .likes img :hover {
   transform: scale(1.05);
-}
-
-.crd-btns {
-  gap: 17px;
 }
 
 .card button {
@@ -158,8 +160,6 @@ footer h3 {
   text-align: center;
   padding: 30px;
   display: block;
-
-  /* visibility: hidden; */
   animation-name: modalOpen;
   animation-duration: 2s;
   transition: transform 0.4s, top 0.4s;
@@ -186,8 +186,6 @@ footer h3 {
   right: 1.3rem;
   margin-top: 1rem;
   margin-left: 1.3rem;
-
-  /* background-color: #fff; */
   border-radius: 4%;
 }
 

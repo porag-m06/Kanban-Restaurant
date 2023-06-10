@@ -79,12 +79,6 @@ Built using **WEBPACK** following **GitFlow** it is  very simple yet powerful pr
 </details>
 
 ### Key Features <a name="key-features"></a>
-
-- **Use of medium-fidelity wireframe attached below to create a UI.**
-   <img src="./leaderboard_wireframe.png" alt="Leaderboard wireframe" width="auto"  height="auto" />
-- **Developed UI:**
-   <img src="./leaderboard_Design.png" alt="Leaderboard wireframe" width="auto"  height="auto" />
-
 - **Use of callbacks and promises.**
 - **Use of async and await.**
 - **Use proper ES6 syntax and ES6 modules to write modular JavaScript.**
