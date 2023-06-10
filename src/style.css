@@ -1,7 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;700&display=swap');
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -15,7 +11,7 @@
 }
 
 body {
-  font-family: cursive, monospace, sans-serif, serif;
+  font-family: 'Courgette', cursive, monospace, sans-serif, serif;
   overflow-x: hidden;
   margin: 0;
   min-height: 100vh;
@@ -38,8 +34,8 @@ header {
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: auto;
 }
 
 .nav-items {
@@ -53,6 +49,15 @@ header {
   list-style-type: none;
 }
 
+.kb-hero-b {
+  width: 100vw;
+  height: 35vh;
+  background-image: url("../assets/kb-hero.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .container {
   flex-wrap: wrap;
   align-content: center;
@@ -63,7 +68,6 @@ header {
 .card {
   width: 350px;
   height: 460px;
-  padding-bottom: 20px;
   flex-direction: column;
   border: 1px solid gainsboro;
   border-radius: 15px;
@@ -78,10 +82,28 @@ header {
   height: 56px;
 }
 
+.card h6 {
+  color: rgb(189, 184, 184);
+}
+
 .card img {
   width: 200px;
   border-radius: 15px;
   margin: 5px;
+}
+
+.likes {
+  width: 60%;
+  padding: 10px 0;
+  justify-content: space-around;
+}
+
+.card .likes img {
+  width: 30px;
+}
+
+.crd-btns {
+  gap: 17px;
 }
 
 .card button {
@@ -90,7 +112,7 @@ header {
   height: 40px;
   width: 90px;
   background: #ff9800;
-  color: white;
+  color: rgb(3, 3, 3);
   margin: 5px 0;
 }
 
@@ -105,8 +127,8 @@ footer h3 {
 /* Reservation */
 
 .Reservation-modal {
-  width: 80%;
-  background: rgba(0, 0, 0, 0.8);
+  width: 80vw;
+  background: rgba(0, 0, 0, 0.85);
   z-index: 99;
   position: fixed;
   left: 50%;
@@ -143,6 +165,7 @@ footer h3 {
   right: 1.3rem;
   margin-top: 1rem;
   margin-left: 1.3rem;
+
   /* background-color: #fff; */
   border-radius: 4%;
 }

@@ -1,7 +1,7 @@
 import { getReservation, addReservation } from './involvment.js';
 
 const setReservationHistory = (reservetionInfoArray, reservationUl) => {
-  reservationUl.innerHTML='';
+  reservationUl.innerHTML = '';
   if (reservetionInfoArray.length) {
     reservetionInfoArray.forEach((reservation) => {
       const li = document.createElement('li');
@@ -10,14 +10,14 @@ const setReservationHistory = (reservetionInfoArray, reservationUl) => {
       reservationUl.appendChild(li);
     });
   }
-}
+};
 
 const displayMeals = (meal, reservetionInfoArray) => {
   let content = '';
   content = `<div class="modal" id="item-modal">
          <div class="Reservation-modal">
             <div class="closeBtn">
-                <img id="closeBtn" src="https://img.icons8.com/glyph-neue/64/delete-sign.png" alt="delete-sign" />
+                <img id="closeBtn" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-close-web-flaticons-lineal-color-flat-icons-4.png" alt="delete-sign" />
             </div>
 
             <div class="meal-container-order">
@@ -89,22 +89,18 @@ const displayMeals = (meal, reservetionInfoArray) => {
       (async () => {
         try {
           updatedReservetionInfoArray = await getReservation(meal.idMeal);
-          console.log("===>", updatedReservetionInfoArray);
         } catch (error) {
           /* eslint-disable */
           console.error(error.message);
           /* eslint-enable */
         }
-      })()
+      })();
 
       setTimeout(() => {
-      console.log("In the second timeout: ", updatedReservetionInfoArray);
-      document.querySelector('.meal-reservation-span').innerHTML = updatedReservetionInfoArray.length;
-      setReservationHistory(updatedReservetionInfoArray, reservationUl);
+        document.querySelector('.meal-reservation-span').innerHTML = updatedReservetionInfoArray.length;
+        setReservationHistory(updatedReservetionInfoArray, reservationUl);
       }, 1000);
-
     }, 1000);
-
   });
 };// displayMeals
 
