@@ -74,11 +74,12 @@ header {
   gap: 0;
   margin: 0 5px;
   background-color: gainsboro;
+  transition: all 0.2s ease-in-out;
 }
 
 .card:hover {
   border: 1px solid yellow;
-  transform: scale(0.7);
+  transform: scale(1.03);
 }
 
 .card h1 {
@@ -105,6 +106,11 @@ header {
 
 .card .likes img {
   width: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+.card .likes img :hover {
+  transform: scale(1.05);
 }
 
 .crd-btns {
