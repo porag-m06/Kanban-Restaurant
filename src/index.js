@@ -67,6 +67,6 @@ setTimeout(() => {
     /* eslint-disable */
     console.log("No data found while fetching for meal list!!!");
     /* eslint-enable */
-    document.querySelector('.container').textContent = 'Error getting data from server! Please reload.';
+    document.querySelector('.container').textContent = 'Error getting data from the server! Check your internet connection & reload Please...';
   }
 }, 2000);
