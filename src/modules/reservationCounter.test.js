@@ -1,4 +1,5 @@
-import { reservationCounter } from './reservation.js';
+// import { reservationCounter } from './reservationCounter.js';
+const reservationCounter = require('./reservationCounter.js');
 
 const reserve = [
   {
