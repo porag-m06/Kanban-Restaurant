@@ -5,5 +5,5 @@ const getAllSeaFoodMeals = async () => {
   return jsonData.meals;
 };
 
-//export default getAllSeaFoodMeals;
-getAllSeaFoodMeals();
+export default getAllSeaFoodMeals;
+
