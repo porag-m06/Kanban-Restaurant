@@ -63,6 +63,8 @@ const showCards = (foodArray) => {
 setTimeout(() => {
   if (allSeafoods.length) {
     showCards(allSeafoods);
+    document.querySelector('#m-item').innerText = allSeafoods.length;
+    
   } else {
     /* eslint-disable */
     console.log("No data found while fetching for meal list!!!");
@@ -70,3 +72,4 @@ setTimeout(() => {
     document.querySelector('.container').textContent = 'Error getting data from the server! Check your internet connection & reload Please...';
   }
 }, 2000);
+
