@@ -1,10 +1,8 @@
 import './style.css';
 import getAllSeaFoodMeals from './modules/meals.js';
 import { addLikeOnEvent, populateCurrentLikes } from './modules/cardlikes.js';
-
 import logo from '../assets/logo-kan.png';
 import like from '../assets/like2.png';
-
 import getItem from './modules/reservation.js';
 
 const logoImg = document.querySelector('.logo');
@@ -39,9 +37,9 @@ const showCards = (foodArray) => {
     cardDiv.classList.add('flex', 'card');
     cardDiv.innerHTML = `<h1>${foodArray[index].strMeal}</h1>
                <h6>${foodArray[index].idMeal}</h6>
-               <img src="${foodArray[index].strMealThumb}" alt="" >
+               <img src="${foodArray[index].strMealThumb}" alt="food image" >
                <div class="likes flex">
-                <img class="like-img img${index}" src="" alt="">
+                <img class="like-img img${index}" src="" alt="like image">
                 <h4><span id = "s${foodArray[index].idMeal}">0</span> likes</h4>
                </div>
                <div class="flex crd-btns">
@@ -64,7 +62,6 @@ setTimeout(() => {
   if (allSeafoods.length) {
     showCards(allSeafoods);
     document.querySelector('#m-item').innerText = allSeafoods.length;
-    
   } else {
     /* eslint-disable */
     console.log("No data found while fetching for meal list!!!");
@@ -72,4 +69,3 @@ setTimeout(() => {
     document.querySelector('.container').textContent = 'Error getting data from the server! Check your internet connection & reload Please...';
   }
 }, 2000);
-

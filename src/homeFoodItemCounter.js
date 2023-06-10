@@ -1,6 +1,3 @@
-const countCards = (foodItemArray)=>{
-
-    return foodItemArray.length;
-}
+const countCards = (foodItemArray) => foodItemArray.length;
 
 module.exports = countCards;
