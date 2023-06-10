@@ -1,0 +1,338 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: 'Courgette', cursive, monospace, sans-serif, serif;
+  overflow-x: hidden;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.max-w {
+  max-width: 1200px;
+  margin: auto;
+}
+
+header {
+  padding: 0 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+}
+
+.nav-link {
+  list-style-type: none;
+}
+
+.kb-hero-b {
+  width: 100vw;
+  height: 35vh;
+  background-image: url("../assets/kb-hero.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 20px;
+  padding: 20px 0;
+  overflow-y: hidden;
+}
+
+.card {
+  width: 350px;
+  height: 480px;
+  flex-direction: column;
+  border: 1px solid gainsboro;
+  border-radius: 15px;
+  gap: 0;
+  margin: 0 5px;
+  background-color: gainsboro;
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  border: 1px solid yellow;
+  transform: scale(1.03);
+}
+
+.card h1 {
+  text-align: left;
+  font-size: 20px;
+  height: 50px;
+  width: 65%;
+}
+
+.card h6 {
+  color: rgb(189, 184, 184);
+}
+
+.card img {
+  width: 250px;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+.name-likes {
+  margin: 10px 0;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.likes {
+  flex-direction: column;
+  width: 20%;
+}
+
+.card .likes img {
+  width: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+.card .likes img :hover {
+  transform: scale(1.05);
+}
+
+.card button {
+  border: 1px solid #ffeb3b;
+  border-radius: 5px;
+  height: 40px;
+  width: 90px;
+  background: #ff9800;
+  color: rgb(3, 3, 3);
+  margin: 5px 0;
+}
+
+.card button:hover {
+  border: 1px solid #020202;
+  border-radius: 5px;
+  height: 40px;
+  width: 90px;
+  background: #ffeb3bb9;
+  color: #000;
+  margin: 5px 0;
+}
+
+footer {
+  height: 55px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+footer h3 {
+  text-align: center;
+  font-size: 22px;
+}
+
+/* Reservation */
+
+.Reservation-modal {
+  width: 80vw;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 99;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.4);
+  text-align: center;
+  padding: 30px;
+  display: block;
+  animation-name: modalOpen;
+  animation-duration: 2s;
+  transition: transform 0.4s, top 0.4s;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 3%;
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+#closeBtn {
+  width: 84px;
+  height: 84px;
+  position: absolute;
+  z-index: 99;
+  right: 1.3rem;
+  margin-top: 1rem;
+  margin-left: 1.3rem;
+  border-radius: 4%;
+}
+
+.meal-container-order {
+  width: 70%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3%;
+}
+
+.img-container {
+  min-width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem auto;
+}
+
+.item-img {
+  width: 100%;
+  border-radius: 5%;
+}
+
+.item-specification-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding: 1rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.item-specification {
+  list-style-type: none;
+  font-size: 32px;
+}
+
+.item {
+  margin-bottom: 0.5rem;
+  list-style-type: none;
+}
+
+.order-list {
+  width: 100%;
+  min-height: 40vh;
+  overflow-y: scroll;
+  margin: 0.5rem 0 0.5rem 0;
+  padding: 1rem;
+  list-style-type: none;
+}
+
+.order-form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 80%;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.form-control,
+input[type='text'] {
+  padding: 0.5rem;
+  font-size: 24px;
+}
+
+.form-control:focus {
+  outline: none;
+}
+
+.btnReserve {
+  padding: 1rem;
+  background-color: blue;
+  color: #fff;
+  border-radius: 0.6rem;
+  border: none;
+  font-size: 32px;
+  height: 80px;
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  .Reservation-modal {
+    width: 120%;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  #closeBtn {
+    width: 40px;
+    height: 44px;
+    margin-top: 1rem;
+    margin-left: 0.2rem;
+    gap: 4px;
+  }
+
+  .meal-container-order {
+    width: 85%;
+  }
+
+  .meal-title {
+    font-size: 18px;
+  }
+
+  .item-specification-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 0.7rem;
+  }
+
+  .item {
+    font-size: 16px;
+  }
+
+  .meal-reservation,
+  .add-reservation {
+    font-size: 16px;
+  }
+
+  .order-form {
+    width: 80%;
+  }
+
+  .form-control,
+  input[type='text'] {
+    padding: 0.3rem;
+    font-size: 18px;
+  }
+
+  .btnReserve {
+    padding: 0.3rem;
+    height: 50px;
+    width: 100px;
+    font-size: 22px;
+  }
+}
